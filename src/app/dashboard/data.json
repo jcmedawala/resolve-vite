@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "header": "Acme Corp - Individual KYC",
+    "type": "Individual",
+    "status": "Done",
+    "target": "24",
+    "limit": "48",
+    "reviewer": "Sarah Mitchell"
+  },
+  {
+    "id": 2,
+    "header": "GlobalTech Ltd - Corporate KYC",
+    "type": "Corporate",
+    "status": "In Process",
+    "target": "120",
+    "limit": "168",
+    "reviewer": "Michael Chen"
+  },
+  {
+    "id": 3,
+    "header": "John Smith - Enhanced Due Diligence",
+    "type": "Enhanced DD",
+    "status": "In Process",
+    "target": "72",
+    "limit": "96",
+    "reviewer": "Emma Rodriguez"
+  },
+  {
+    "id": 4,
+    "header": "TechStart Inc - Onboarding",
+    "type": "Corporate",
+    "status": "Done",
+    "target": "48",
+    "limit": "72",
+    "reviewer": "Assign reviewer"
+  },
+  {
+    "id": 5,
+    "header": "Maria Garcia - PEP Screening",
+    "type": "PEP Check",
+    "status": "Done",
+    "target": "12",
+    "limit": "24",
+    "reviewer": "James Wilson"
+  },
+  {
+    "id": 6,
+    "header": "BlueOcean Enterprises - AML Review",
+    "type": "AML Review",
+    "status": "In Process",
+    "target": "96",
+    "limit": "120",
+    "reviewer": "Lisa Wong"
+  },
+  {
+    "id": 7,
+    "header": "David Lee - Individual Verification",
+    "type": "Individual",
+    "status": "Done",
+    "target": "18",
+    "limit": "36",
+    "reviewer": "Raj Patel"
+  },
+  {
+    "id": 8,
+    "header": "Phoenix Partners - Risk Assessment",
+    "type": "Risk Assessment",
+    "status": "In Process",
+    "target": "60",
+    "limit": "84",
+    "reviewer": "Assign reviewer"
+  },
+  {
+    "id": 9,
+    "header": "Anna Kowalski - Document Review",
+    "type": "Document Review",
+    "status": "Done",
+    "target": "24",
+    "limit": "48",
+    "reviewer": "Carlos Martinez"
+  },
+  {
+    "id": 10,
+    "header": "Sunrise Holdings - Corporate Onboarding",
+    "type": "Corporate",
+    "status": "In Process",
+    "target": "144",
+    "limit": "192",
+    "reviewer": "Priya Singh"
+  }
+]
