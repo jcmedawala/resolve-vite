@@ -11,6 +11,7 @@ import {
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
+  IconPhone,
   IconReport,
   IconSearch,
   IconSettings,
@@ -52,6 +53,11 @@ const data = {
       title: "Projects",
       url: "#",
       icon: IconFolder,
+    },
+    {
+      title: "Calls",
+      url: "#",
+      icon: IconPhone,
     },
     {
       title: "Team",
@@ -156,8 +162,8 @@ export function AppSidebar({
     avatar: string
   }
   canAccessTeam: boolean
-  currentPage: "dashboard" | "team"
-  onNavigate: (page: "dashboard" | "team") => void
+  currentPage: "dashboard" | "team" | "calls"
+  onNavigate: (page: "dashboard" | "team" | "calls") => void
 }) {
   // Filter navMain items based on access permissions
   const filteredNavMain = data.navMain.filter((item) => {
@@ -174,6 +180,13 @@ export function AppSidebar({
         ...item,
         onClick: () => onNavigate("dashboard"),
         isActive: currentPage === "dashboard",
+      }
+    }
+    if (item.title === "Calls") {
+      return {
+        ...item,
+        onClick: () => onNavigate("calls"),
+        isActive: currentPage === "calls",
       }
     }
     if (item.title === "Team") {

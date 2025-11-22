@@ -8,9 +8,10 @@ import { api } from "../../convex/_generated/api";
 import { useState } from "react";
 import DashboardPage from "../app/dashboard/page";
 import TeamPage from "../app/team/page";
+import CallsPage from "../app/calls/page";
 
 export function Dashboard() {
-  const [currentPage, setCurrentPage] = useState<"dashboard" | "team">("dashboard");
+  const [currentPage, setCurrentPage] = useState<"dashboard" | "team" | "calls">("dashboard");
 
   // Get current user data from Convex
   const currentUser = useQuery(api.myFunctions.getCurrentUser);
@@ -34,7 +35,7 @@ export function Dashboard() {
   };
 
   // Handle navigation with access control
-  const handleNavigation = (page: "dashboard" | "team") => {
+  const handleNavigation = (page: "dashboard" | "team" | "calls") => {
     // Only allow navigation to team page if user has access
     if (page === "team" && !canAccessTeam) {
       return;
@@ -53,7 +54,9 @@ export function Dashboard() {
       <SidebarInset>
         <SiteHeader userRole={currentUser?.role} />
         <div className="@container/main flex flex-1 flex-col gap-4 p-4 lg:p-6">
-          {currentPage === "dashboard" ? <DashboardPage /> : <TeamPage />}
+          {currentPage === "dashboard" && <DashboardPage />}
+          {currentPage === "team" && <TeamPage />}
+          {currentPage === "calls" && <CallsPage />}
         </div>
       </SidebarInset>
     </SidebarProvider>

@@ -8,10 +8,11 @@ import { useState } from "react";
 import { LoginForm } from "./components/login-form";
 import { SignupForm } from "./components/signup-form";
 import { Dashboard } from "./components/Dashboard";
+import { CallSettingsProvider } from "./contexts/CallSettingsContext";
 
 export default function App() {
   return (
-    <>
+    <CallSettingsProvider>
       <Authenticated>
         <Dashboard />
       </Authenticated>
@@ -22,7 +23,7 @@ export default function App() {
           </div>
         </div>
       </Unauthenticated>
-    </>
+    </CallSettingsProvider>
   );
 }
 

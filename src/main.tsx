@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { ConvexAuthProvider } from "@convex-dev/auth/react";
 import { ConvexReactClient } from "convex/react";
 import "./index.css";
+import "@stream-io/video-react-sdk/dist/css/styles.css";
+import "@stream-io/video-styling/dist/css/styles.css";
 import App from "./App.tsx";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);

@@ -204,7 +204,7 @@ export const createUser = action({
 
     // Check if user with this email already exists
     const existingUsers = await ctx.runQuery(api.team.getAllUsers);
-    if (existingUsers.some(u => u.email === args.email)) {
+    if (existingUsers.some((u: any) => u.email === args.email)) {
       throw new Error("A user with this email already exists");
     }
 

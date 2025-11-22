@@ -10,9 +10,11 @@
 
 import type * as adminAuth from "../adminAuth.js";
 import type * as auth from "../auth.js";
+import type * as calls from "../calls.js";
 import type * as http from "../http.js";
 import type * as migrations from "../migrations.js";
 import type * as myFunctions from "../myFunctions.js";
+import type * as stream from "../stream.js";
 import type * as team from "../team.js";
 
 import type {
@@ -32,9 +34,11 @@ import type {
 declare const fullApi: ApiFromModules<{
   adminAuth: typeof adminAuth;
   auth: typeof auth;
+  calls: typeof calls;
   http: typeof http;
   migrations: typeof migrations;
   myFunctions: typeof myFunctions;
+  stream: typeof stream;
   team: typeof team;
 }>;
 declare const fullApiWithMounts: typeof fullApi;

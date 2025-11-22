@@ -23,6 +23,28 @@ export default defineSchema({
     teamLead: v.optional(v.union(v.string(), v.null())),
     isActive: v.optional(v.boolean()),
   }).index("email", ["email"]),
+  calls: defineTable({
+    streamCallId: v.string(),
+    callType: v.string(), // "one_on_one", "team_meeting", "kyc_session"
+    initiatorId: v.id("users"),
+    participantIds: v.array(v.id("users")),
+    status: v.string(), // "scheduled", "active", "ended", "cancelled"
+    scheduledTime: v.optional(v.number()),
+    startTime: v.optional(v.number()),
+    endTime: v.optional(v.number()),
+    duration: v.optional(v.number()), // in seconds
+    recordingUrl: v.optional(v.string()),
+    metadata: v.optional(v.object({
+      title: v.optional(v.string()),
+      clientName: v.optional(v.string()),
+      clientId: v.optional(v.string()),
+      notes: v.optional(v.string()),
+    })),
+  })
+    .index("by_initiator", ["initiatorId"])
+    .index("by_status", ["status"])
+    .index("by_scheduled_time", ["scheduledTime"])
+    .index("by_stream_call_id", ["streamCallId"]),
   numbers: defineTable({
     value: v.number(),
   }),
