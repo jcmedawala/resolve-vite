@@ -12,8 +12,8 @@ import {
 
 export function DeviceSelector() {
   const { useCameraState, useMicrophoneState } = useCallStateHooks();
-  const { camera, devices: cameraDevices } = useCameraState();
-  const { microphone, devices: micDevices } = useMicrophoneState();
+  const { camera, devices: cameraDevices, selectedDevice: selectedCamera } = useCameraState();
+  const { microphone, devices: micDevices, selectedDevice: selectedMic } = useMicrophoneState();
 
   return (
     <div className="space-y-4">
@@ -21,7 +21,7 @@ export function DeviceSelector() {
       <div className="space-y-2">
         <Label className="text-sm font-medium text-white">Camera</Label>
         <Select
-          value={camera?.selectedDevice || ''}
+          value={selectedCamera || ''}
           onValueChange={(deviceId) => camera?.select(deviceId)}
         >
           <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
@@ -41,7 +41,7 @@ export function DeviceSelector() {
       <div className="space-y-2">
         <Label className="text-sm font-medium text-white">Microphone</Label>
         <Select
-          value={microphone?.selectedDevice || ''}
+          value={selectedMic || ''}
           onValueChange={(deviceId) => microphone?.select(deviceId)}
         >
           <SelectTrigger className="bg-gray-800 border-gray-700 text-white">

@@ -23,7 +23,6 @@ import {
   IconCircleXFilled,
   IconPlayerPlay,
   IconTrash,
-  IconLink,
   IconCopy,
 } from "@tabler/icons-react"
 import { toast } from "sonner"
@@ -98,7 +97,7 @@ export default function CallsPage() {
   }
 
   // Handle copy call link
-  const handleCopyCallLink = async (callId: Id<"calls">, callTitle: string) => {
+  const handleCopyCallLink = async (callId: Id<"calls">, _callTitle: string) => {
     try {
       // For now, just copy the call ID - participants can use this to join
       // In a production app, this would be a full URL like https://yourapp.com/calls/join/callId

@@ -3,6 +3,10 @@
 import { useCallStateHooks } from "@stream-io/video-react-sdk";
 import { IconMicrophone, IconMicrophoneOff, IconVideo, IconVideoOff } from "@tabler/icons-react";
 
+// Stream SDK TrackType enum values
+const TRACK_TYPE_AUDIO = 1;
+const TRACK_TYPE_VIDEO = 2;
+
 export function ParticipantsSidebar() {
   const { useParticipants } = useCallStateHooks();
   const participants = useParticipants();
@@ -11,8 +15,8 @@ export function ParticipantsSidebar() {
     <div className="p-4 space-y-2 overflow-y-auto h-full">
       {participants.map((participant) => {
         // Check if audio and video tracks are published
-        const isAudioMuted = !participant.publishedTracks.some(track => track === 'audioTrack');
-        const isVideoMuted = !participant.publishedTracks.some(track => track === 'videoTrack');
+        const isAudioMuted = !participant.publishedTracks.some(track => track === TRACK_TYPE_AUDIO);
+        const isVideoMuted = !participant.publishedTracks.some(track => track === TRACK_TYPE_VIDEO);
 
         return (
           <div
